@@ -27,10 +27,11 @@ RUN npm install
 # 3. 소스 복사
 COPY . /usr/src/app
 
-# 3. Nodejs 패키지 설치
-WORKDIR /usr/src/app
-RUN npm install
-
 # 4. WEB 서버 실행 (Listen 포트 정의)
 EXPOSE 3000
 CMD node app.js
+
+# 다시 빌드
+# docker build -t web .
+# 실행
+# docker run -p 3000:3000 web
